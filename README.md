@@ -48,5 +48,5 @@ Proyek Mobile Flutter untuk menampilkan karakter dari animasi yang berjudul Rick
 
 ## Screenshots
 | Homepage | Detailpage | Searchpage | Favoritepage |
-| -------- | ---------- | ---------- | ------------ |
+| -------- | ---------- | ---------- | ---------- |
 | ![image](./screenshots/homepage01.jpg) | ![image](./screenshots/detailpage02.jpg) | ![image](./screenshots/searchpage03.jpg) | ![image](./screenshots/favoritepage04.jpg) |
