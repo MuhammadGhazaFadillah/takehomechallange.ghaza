@@ -1,4 +1,3 @@
-
 # BIGIO Mobile Dev - Take Home Challange
 
 ## Introduction :
@@ -30,6 +29,7 @@ Proyek Mobile Flutter untuk menampilkan karakter dari animasi yang berjudul Rick
 - [bloc](https://pub.dev/packages/bloc) 8.1.4
 - [sqflite](https://pub.dev/packages/sqflite) 2.3.3+1
 - [build_runner](https://pub.dev/packages/build_runner) 2.4.11
+
 ## Project Structure
 - data
 * `datasources`
@@ -42,13 +42,11 @@ Proyek Mobile Flutter untuk menampilkan karakter dari animasi yang berjudul Rick
 - presentation
 * `bloc`
 * `pages`
+
 ## APK Link
 [Application Link](https://drive.google.com/drive/folders/1f9UF6EfOe0kQXGD-TJ7apM0oWBNtI5Kn?usp=sharing)
-## Screenshots
-| Homepage | Detailpage |
-| -------- | ---------- |
-| ![image](./screenshots/homepage01.jpg) | ![image](./screenshots/detailpage02.jpg) |
 
-| Searchpage | Favoritepage |
-| ---------- | ------------ |
-| ![image](./screenshots/searchpage03.jpg) | ![image](./screenshots/favoritepage.jpg) |
+## Screenshots
+| Homepage | Detailpage | Searchpage | Favoritepage |
+| -------- | ---------- | ---------- | ------------ |
+| ![image](./screenshots/homepage01.jpg) | ![image](./screenshots/detailpage02.jpg) | ![image](./screenshots/searchpage03.jpg) | ![image](./screenshots/favoritepage.jpg) |
