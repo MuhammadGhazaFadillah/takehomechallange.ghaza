@@ -14,6 +14,7 @@ Proyek Mobile Flutter untuk menampilkan karakter dari animasi yang berjudul Rick
 - [Library](#Library)
 - [Project Structure](#ProjectStructure)
 - [APK Link](#APKLink)
+- [Screenshots](#Screenshots)
 
 ## Features
 - List of character
@@ -30,6 +31,7 @@ Proyek Mobile Flutter untuk menampilkan karakter dari animasi yang berjudul Rick
 - [bloc](https://pub.dev/packages/bloc) 8.1.4
 - [sqflite](https://pub.dev/packages/sqflite) 2.3.3+1
 - [build_runner](https://pub.dev/packages/build_runner) 2.4.11
+
 ## Project Structure
 - data
 * `datasources`
@@ -42,5 +44,7 @@ Proyek Mobile Flutter untuk menampilkan karakter dari animasi yang berjudul Rick
 - presentation
 * `bloc`
 * `pages`
+  
 ## APK Link
 [Application Link](https://drive.google.com/drive/folders/1f9UF6EfOe0kQXGD-TJ7apM0oWBNtI5Kn?usp=sharing)
+
