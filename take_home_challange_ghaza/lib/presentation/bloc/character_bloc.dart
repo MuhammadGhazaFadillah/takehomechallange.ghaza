@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:take_home_challange_ghaza/data/local/db_helper.dart';
-import 'package:take_home_challange_ghaza/data/models/characterModel.dart';
 import 'package:take_home_challange_ghaza/domain/usecases/add_favorite.dart';
 import 'package:take_home_challange_ghaza/domain/usecases/get_all_characters.dart';
 import 'package:take_home_challange_ghaza/domain/usecases/get_character_detail.dart';
 import 'package:take_home_challange_ghaza/domain/usecases/get_favorites.dart';
 import 'package:take_home_challange_ghaza/domain/usecases/remove_favorite.dart';
 import 'package:take_home_challange_ghaza/domain/usecases/search_characters.dart';
+import 'package:take_home_challange_ghaza/data/models/character.dart';
 
 part 'character_event.dart';
 part 'character_state.dart';
@@ -62,8 +62,8 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
 
     on<AddFavoriteEvent>((event, emit) async {
       try {
-        await databaseHelper.insertFavorite(event.character);
-        add(GetFavoritesEvent()); // Refresh the favorites list
+        await databaseHelper.insert(event.character);
+        add(GetFavoritesEvent());
       } catch (e) {
         emit(CharacterError(message: e.toString()));
       }
@@ -71,8 +71,8 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
 
     on<RemoveFavoriteEvent>((event, emit) async {
       try {
-        await databaseHelper.removeFavorite(event.id);
-        add(GetFavoritesEvent()); // Refresh the favorites list
+        await databaseHelper.delete(event.id);
+        add(GetFavoritesEvent());
       } catch (e) {
         emit(CharacterError(message: e.toString()));
       }
@@ -81,7 +81,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
     on<GetFavoritesEvent>((event, emit) async {
       emit(CharacterLoading());
       try {
-        final characters = await getFavorites();
+        final characters = await databaseHelper.queryAllFavorites();
         emit(CharacterLoaded(characters: characters));
       } catch (e) {
         emit(CharacterError(message: e.toString()));

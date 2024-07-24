@@ -1,5 +1,5 @@
 import 'package:take_home_challange_ghaza/data/local/db_helper.dart';
-import 'package:take_home_challange_ghaza/data/models/characterModel.dart';
+import 'package:take_home_challange_ghaza/data/models/character.dart';
 import 'package:take_home_challange_ghaza/domain/repositories/character_repo.dart';
 import 'package:take_home_challange_ghaza/data/datasources/character_remote_datasource.dart';
 
@@ -26,16 +26,16 @@ class CharacterRepositoryImpl implements CharacterRepository {
 
   @override
 Future<void> addFavorite(CharacterModel character) async {
-  await dbHelper.insertFavorite(character);
+  await dbHelper.insert(character);
 }
 
 @override
 Future<void> removeFavorite(int id) async {
-  await dbHelper.removeFavorite(id);
+  await dbHelper.delete(id);
 }
 
 @override
 Future<List<CharacterModel>> getFavorites() async {
-  return await dbHelper.getFavorites();
+  return await dbHelper.queryAllFavorites();
 }
 }

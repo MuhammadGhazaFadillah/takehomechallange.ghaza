@@ -13,12 +13,12 @@ class Favorite extends StatelessWidget {
       body: BlocBuilder<CharacterBloc, CharacterState>(
         builder: (context, state) {
           if (state is CharacterLoading) {
-            return Center(child: CircularProgressIndicator());
-          } else if (state is CharacterLoaded) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (state is FavoritesLoaded) {
             return ListView.builder(
-              itemCount: state.characters.length,
+              itemCount: state.favorites.length,
               itemBuilder: (context, index) {
-                final character = state.characters[index];
+                final character = state.favorites[index];
                 return ListTile(
                   leading: Image.network(character.image),
                   title: Text(character.name),
@@ -31,6 +31,7 @@ class Favorite extends StatelessWidget {
                         ),
                       ),
                     );
+                    context.read<CharacterBloc>().add(GetFavoritesEvent());
                   },
                 );
               },

@@ -17,6 +17,30 @@ class CharacterModel {
     required this.image,
   });
 
+  factory CharacterModel.fromMap(Map<String, dynamic> map) {
+    return CharacterModel(
+      id: map['id'],
+      name: map['name'],
+      species: map['species'],
+      gender: map['gender'],
+      origin: map['origin']['name'],
+      location: map['location']['name'],
+      image: map['image'],
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'species': species,
+      'gender': gender,
+      'origin': origin,
+      'location': location,
+      'image': image,
+    };
+  }
+
   factory CharacterModel.fromJson(Map<String, dynamic> json) {
     return CharacterModel(
       id: json['id'],

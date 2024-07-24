@@ -9,28 +9,27 @@ class Detail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-        title: Text('Character Detail'),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: (){
-            Navigator.pop(context);
-          },
-        ),
+        title: const Text('Character Detail'),
       ),
       body: BlocBuilder<CharacterBloc, CharacterState>(
         builder: (context, state) {
           if (state is CharacterLoading) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (state is CharacterDetailLoaded) {
             final character = state.character;
             return SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.network(character.image),
+                  Container(
+                    width: double.infinity,
+                    child: Image.network(
+                      character.image,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(character.name, style: TextStyle(fontSize: 24)),
@@ -55,7 +54,8 @@ class Detail extends StatelessWidget {
               ),
             );
           } else if (state is CharacterError) {
-            return Center(child: Text('Failed to load character details'));
+            return const Center(
+                child: Text('Failed to load character details'));
           }
           return Container();
         },

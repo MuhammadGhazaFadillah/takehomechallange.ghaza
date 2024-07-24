@@ -30,7 +30,7 @@ class SearchCharactersEvent extends CharacterEvent {
 class AddFavoriteEvent extends CharacterEvent {
   final CharacterModel character;
 
-  const AddFavoriteEvent({required this.character});
+  AddFavoriteEvent({required this.character});
 
   @override
   List<Object> get props => [character];
@@ -39,7 +39,7 @@ class AddFavoriteEvent extends CharacterEvent {
 class RemoveFavoriteEvent extends CharacterEvent {
   final int id;
 
-  const RemoveFavoriteEvent({required this.id});
+  RemoveFavoriteEvent({required this.id});
 
   @override
   List<Object> get props => [id];

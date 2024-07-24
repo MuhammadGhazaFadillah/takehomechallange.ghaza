@@ -41,7 +41,7 @@ class CharacterError extends CharacterState {
 class FavoritesLoaded extends CharacterState {
   final List<CharacterModel> favorites;
 
-  const FavoritesLoaded({required this.favorites});
+  FavoritesLoaded({required this.favorites});
 
   @override
   List<Object> get props => [favorites];
